@@ -46,7 +46,7 @@ const isServiceSeeker = userRole === 'serviceSeeker'
 
 
 export const routes: any = [
-  { path: "/", element: <Navigate to={isServiceProvider ? "service-provider" : isServiceSeeker ? 'home' : 'page-not-found'} /> },
+  { path: "/", element: <Navigate to={isServiceProvider ? "service-provider" : isServiceSeeker ? 'home' : 'sign-in'} /> },
   {
     path: "sign-in",
     element: <SignIn />,

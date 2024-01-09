@@ -12,6 +12,8 @@ const SignIn = () => {
 
     const onFinish = (values: any) => {
         console.log('Success:', values);
+        localStorage.setItem('userRole', 'serviceSeeker')
+        navigate('/home')
     };
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
