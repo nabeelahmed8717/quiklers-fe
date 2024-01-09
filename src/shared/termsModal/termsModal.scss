@@ -1,0 +1,24 @@
+.terms-wrapper{
+  background-color: #F7FAF7;
+  padding: 20px;
+  border-radius: 20px;
+  max-height: 350px;
+  overflow: scroll;
+  h2{
+    font-size: 14px;
+    font-weight: 600;
+  }
+  p{
+    font-size: 13px;
+    color: #686868;
+  }
+  &::-webkit-scrollbar {
+    background-color: #ededed;
+    width: 8px;
+    height: 0px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c8c7c7;
+    border-radius: 20px;
+  }
+}

@@ -1,0 +1,42 @@
+.card-service {
+    background-color: #ffffff;
+    width: 200px;
+    height: 185px;
+    border: 1px solid #e7e7e9;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding: 15px 0px;
+    padding-top: 40px;
+    position: relative;
+    @media (max-width: 525px) {
+      width: 47%;
+    }
+    .service-icon {
+      width: auto;
+      height: 70px;
+      img {
+        height: 70px;
+        width: auto;
+      }
+    }
+    .service-tags {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 5px;
+      .tags {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 2px 5px;
+        border-radius: 4px;
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }

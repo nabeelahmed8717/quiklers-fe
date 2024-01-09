@@ -1,0 +1,88 @@
+.my-services-page {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  .header-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .service-cards-flex {
+    margin-top: 30px;
+  }
+  .service-card {
+    .header-ser {
+      display: flex;
+      gap: 10px;
+      .service-title {
+        color: #1c251c;
+        font-weight: 600;
+        font-size: 18px;
+      }
+      .header-options {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .header-sl-btns {
+          background-color: #e6e9e6;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.5s;
+          cursor: pointer;
+          img {
+            opacity: 0.7;
+          }
+          &:hover {
+            background-color: #27ae60;
+            img {
+              filter: invert(1) brightness(1);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    background-color: #f7faf7;
+    padding: 20px;
+    border-radius: 20px;
+
+    .service-status-insights {
+      margin-top: 10px;
+      p {
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .sc-ac {
+        color: #27ae60;
+      }
+    }
+  }
+}
+
+.service-modal-d3 {
+  .ant-modal {
+    width: 60% !important;
+    @media (max-width: 700px) {
+      width: 100% !important;
+    }
+  }
+  .physical-availability-container {
+    background-color: #f7faf7;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .upload-images-s{
+    background-color: #F7FAF7;
+    border: 1px solid #27ae60;
+    padding: 11px 46px;
+    border-radius: 14px;
+    border-style: dashed;
+    color: #27ae60;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

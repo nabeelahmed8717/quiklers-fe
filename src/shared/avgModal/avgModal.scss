@@ -1,0 +1,26 @@
+.avg-modal-main {
+  .anm-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    button {
+      background-color: #5865f2;
+      width: fit-content;
+      padding: 0px 31px ;
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      &:hover{
+        background-color: #4049ae;
+      }
+    }
+    .close-btn{
+        background-color: #ececec;
+        color: #000;
+        &:hover{
+            background-color: rgb(187, 187, 187);
+          }
+    }
+  }
+}
