@@ -198,7 +198,7 @@ const NavBar = ({ activeRole }: any) => {
         <div
             className={classToRender} style={{ top: visible ? 0 : '-100px', }}
         >
-            <div className="brand-logo"><img src={matchingRoute ? brandLogoW : brandLogoB} alt="" /></div>
+            {!isMobile && <div className="brand-logo"><img src={matchingRoute ? brandLogoW : brandLogoB} alt="" /></div>}
             {
                 isServiceSeeker &&
                 <>
@@ -253,14 +253,19 @@ const NavBar = ({ activeRole }: any) => {
                                 </Dropdown>
                             </div>
                         </>}
+                    
+                    {isMobile && <Button className="rounded-buttons-nav" onClick={() => setisDrawerOpen(true)}><img src={menu} width={20} height={20} alt="" /></Button>}
+                    
+                    {isMobile && <div className="brand-logo brand-logo-res"><img src={matchingRoute ? brandLogoW : brandLogoB} alt="" /></div>}
+
                     {
-                        isServiceSeeker &&
+                        isServiceSeeker ?
                         <>
                             {isMobile && <div className='advance-search-toggle-icon rounded-buttons-nav' onClick={() => setIsAdvanceSearch(true)}><img src={searchIcon} alt="" width={20} height={20} /></div>}
                         </>
+                        :
+                        <div></div>
                     }
-                    {isMobile && <Button className="rounded-buttons-nav" onClick={() => setisDrawerOpen(true)}><img src={menu} width={20} height={20} alt="" /></Button>}
-
 
                     <Drawer
                         title={<div className="d-flex justify-between align-center"><span className='fs-15 fw-600'>Menu</span><span onClick={() => setisDrawerOpen(false)}><CloseOutlined /></span></div>}

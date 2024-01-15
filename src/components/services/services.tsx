@@ -72,6 +72,27 @@ const Services = () => {
     };
   }, []);
 
+
+
+  const [scrollOpacity, setScrollOpacity] = useState<any>(1);
+
+  const handleScroll = () => {
+    const serCardInsetCloneDiv:any = document?.querySelector('#ser-card-inset-clone-dr4');
+    const scrollY = serCardInsetCloneDiv?.scrollTop;
+
+    const opacity = 1 - scrollY / 300;
+    setScrollOpacity(Math.max(0, Math.min(1, opacity)));
+  };
+
+  useEffect(() => {
+    const serCardInsetCloneDiv:any = document?.querySelector('#ser-card-inset-clone-dr4');
+    serCardInsetCloneDiv?.addEventListener('scroll', handleScroll);
+
+    return () => {
+      serCardInsetCloneDiv?.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className='services-main-wrapper'>
       <div className="main-service-image-wrapper">
@@ -84,17 +105,19 @@ const Services = () => {
 
 
       <div className="wrap-set-services">
-        <div style={{ display: 'flex', alignItems: "center", gap: "10px" }}>
+        <div className='search-flex-ser' style={{ display: 'flex', alignItems: "center", gap: "10px" }}>
           <Input rootClassName='search-service' size="large" placeholder="Search Service" />
           <Button className='btn-hfr' style={{ padding: "10px 20px" }}> <img src={searchIcon} style={{ filter: "invert(1) brightness(11)" }} width={20} height={20} alt="" /> </Button>
         </div>
 
         <Row style={{ marginTop: 60 }} gutter={20}>
-          <Col md={7} sm={7} >
+          <Col lg={7} md={7} sm={24} xs={24} >
             <div
               style={{
                 position: 'sticky',
-                top: '70px'
+                top: '70px',
+                width: '100%',
+                zIndex: "100"
               }}>
               <div className='filters'>
                 {
@@ -110,7 +133,7 @@ const Services = () => {
               <QuickTips />
             </div>
           </Col>
-          <Col md={17} sm={17} >
+          <Col md={17} sm={17} style={{ position: 'unset' }} >
             <div className="service-providers-cards-page-wrapper">
               {
                 servicesPageData.map((item: any) => (
@@ -153,8 +176,7 @@ const Services = () => {
       </Modal>
 
       <Drawer closeIcon={<img src={arrowRightIcon} width={25} height={25} style={{ transform: "rotate(90deg)" }} alt="" />} title="" rootClassName='wrapper-service-drawer' placement="right" onClose={() => setIsViewServiceDetails(false)} open={isViewServiceDetails}>
-
-        <div className='service-provider-card-main ser-card-inset-clone-dr4' >
+        <div className='service-provider-card-main ser-card-inset-clone-dr4' id='ser-card-inset-clone-dr4' >
           {
             isMobile &&
             <div className="res-back-icon" onClick={() => setIsViewServiceDetails(false)}>
@@ -162,7 +184,7 @@ const Services = () => {
             </div>
           }
           <div className='wrapper-ddl7s8'>
-            <div className='service-image'><img src={viewServiceDetails?.serviceBanner} alt="" /></div>
+            <div className='service-image'> <div style={{ opacity: scrollOpacity }}><img src={viewServiceDetails?.serviceBanner} alt="" /></div> </div>
             <div className='wrapper-service-inset'>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div>

@@ -2,10 +2,18 @@
   width: 80%;
   margin: 0 auto;
   margin-top: 20px;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
   .header-flex{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @media (max-width: 768px) {
+     flex-direction: column;
+     align-items: flex-start;
+    }
   }
   .service-cards-flex {
     margin-top: 30px;
@@ -85,4 +93,5 @@
     font-size: 14px;
     font-weight: 500;
   }
+  
 }

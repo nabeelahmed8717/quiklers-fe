@@ -16,6 +16,16 @@
       height: 50px;
     }
   }
+
+  .brand-logo-res{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+  }
+
   .advance-search {
     .input-adv-search {
       width: 26vw;
@@ -36,6 +46,10 @@
   }
   .nav-menu {
     gap: 0;
+    @media (max-width: 768px) {
+      justify-content: space-between;
+      width: 100%;
+    }
     .rounded-buttons-nav {
       border-radius: 50%;
       padding: 0px !important;

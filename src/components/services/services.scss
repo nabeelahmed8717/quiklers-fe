@@ -8,6 +8,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+   
     .cloud-banner {
       position: absolute;
       bottom: -2px;
@@ -21,7 +23,12 @@
         font-size: 28px;
         color: #fff;
         text-align: center;
+        @media (max-width: 768px) {
+          margin-bottom: 54px;
+          font-size: 17px;
+        }
       }
+      
     }
   }
 
@@ -36,13 +43,24 @@
     width: 80%;
     margin: 0 auto;
     margin-top: 60px;
-    @media (max-width: 500px) {
+    @media (max-width: 768px) {
       width: 95%;
+    margin-top: -36px;
+    position: relative;
     }
     .search-service {
       background-color: #ebebeb;
       border: none !important;
       box-shadow: none;
+    }
+
+    .search-flex-ser{
+      @media (max-width: 768px){
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 10px;
+      }
+     
     }
 
     .filters {
@@ -149,6 +167,14 @@
     gap: 10px;
     background-color: #ffffff;
     position: relative;
+    @media (max-width: 768px){
+      max-height: 90vh;
+      overflow: scroll;
+      .service-image{
+        background-color: #000 !important;
+      }
+    }
+   
     .wrapper-ddl7s8{
       width: 68%;
       @media (max-width: 768px) {

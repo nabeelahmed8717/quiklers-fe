@@ -39,7 +39,7 @@ const AvgModal = ({ isOpenModal, setIsOpenModal, onSubmit, isAvg, contentsSwitch
                         <h2 style={{ marginTop: "20px" }}>{titleSwitch[contentsSwitchModal?.type]}</h2>
                         <p className='fs-12 dull-color' style={{ marginTop: "10px", width: "80%", textAlign: "center" }}>{descriptionSwitch[contentsSwitchModal?.type]}</p>
                         <div style={{ display: "flex", gap: "10px", marginTop: "20px", marginBottom: "20px" }}>
-                            <Button className='close-btn'>Close</Button>
+                            <Button onClick={() => { { setIsOpenModal(false); setContentsSwitchModal({}) } }} className='close-btn'>Close</Button>
                             <Button onClick={clickedSwitch[contentsSwitchModal?.type]} >Navigate</Button>
                         </div>
                     </div>

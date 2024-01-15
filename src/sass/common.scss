@@ -1,5 +1,13 @@
 @import "./variables.scss";
 
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .btn-primary,
 .btn-cancel,
 .btn-secondary {

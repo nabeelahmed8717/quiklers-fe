@@ -4,23 +4,45 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    h2 {
+      @media (max-width: 768px) {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
     button {
       background-color: #5865f2;
       width: fit-content;
-      padding: 0px 31px ;
+      padding: 0px 31px;
       border: none;
       border-radius: 30px;
       color: #fff;
-      &:hover{
+      &:hover {
         background-color: #4049ae;
       }
     }
-    .close-btn{
-        background-color: #ececec;
-        color: #000;
-        &:hover{
-            background-color: rgb(187, 187, 187);
-          }
+    .close-btn {
+      background-color: #ececec;
+      color: #000;
+      &:hover {
+        background-color: rgb(187, 187, 187);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ant-modal {
+      margin: 0 !important;
+      width: 100%;
+      max-width: 100% !important;
+      top: 0 !important;
+      height: 100vh;
+    }
+    .ant-modal-content {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 }
