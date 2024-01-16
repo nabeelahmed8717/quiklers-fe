@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './avgModal.scss'
 import { Button, Modal } from 'antd'
 import jobSeekerGif from '../../assets/animations/seeker.gif'
@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 const AvgModal = ({ isOpenModal, setIsOpenModal, onSubmit, isAvg, contentsSwitchModal, setContentsSwitchModal }: any) => {
     const navigate = useNavigate()
+    const [serveLoadingCloned, setServeLoadingCloned] = useState(false)
     const titleSwitch: any = {
         serviceSeeker: 'Switch to "Service Seeker" Dashboard',
         serviceProvider: 'Switch to "Service Provider" Dashboard',
@@ -24,9 +25,9 @@ const AvgModal = ({ isOpenModal, setIsOpenModal, onSubmit, isAvg, contentsSwitch
         collaborator: collaboratorGif,
     }
     const clickedSwitch: any = {
-        serviceSeeker: () => { localStorage.setItem('userRole', 'serviceSeeker'); navigate('./home'); window.location.reload() },
-        serviceProvider: () => { localStorage.setItem('userRole', 'serviceProvider'); navigate('./service-provider'); window.location.reload() },
-        collaborator: () => { localStorage.setItem('userRole', 'serviceCollaborator'); navigate('./home'); window.location.reload() },
+        serviceSeeker: () => {setServeLoadingCloned(true); localStorage.setItem('userRole', 'serviceSeeker'); navigate('./home'); window.location.reload() },
+        serviceProvider: () => {setServeLoadingCloned(true); localStorage.setItem('userRole', 'serviceProvider'); navigate('./service-provider'); window.location.reload() },
+        collaborator: () => {setServeLoadingCloned(true); localStorage.setItem('userRole', 'serviceCollaborator'); navigate('./home'); window.location.reload() },
     }
 
     return (
@@ -40,7 +41,7 @@ const AvgModal = ({ isOpenModal, setIsOpenModal, onSubmit, isAvg, contentsSwitch
                         <p className='fs-12 dull-color' style={{ marginTop: "10px", width: "80%", textAlign: "center" }}>{descriptionSwitch[contentsSwitchModal?.type]}</p>
                         <div style={{ display: "flex", gap: "10px", marginTop: "20px", marginBottom: "20px" }}>
                             <Button onClick={() => { { setIsOpenModal(false); setContentsSwitchModal({}) } }} className='close-btn'>Close</Button>
-                            <Button onClick={clickedSwitch[contentsSwitchModal?.type]} >Navigate</Button>
+                            <Button onClick={clickedSwitch[contentsSwitchModal?.type]}  loading={serveLoadingCloned}>Navigate</Button>
                         </div>
                     </div>
                 </>

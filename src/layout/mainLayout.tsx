@@ -75,7 +75,7 @@ const MainLayout = () => {
                         <NavigationItem icon={homeIcon} filledIcon={homeIconFilled} navigation={isServiceSeeker ? '/home' : isServiceProvider ? '/service-provider' : '/'} navigate={navigate} label='Home' />
                         <NavigationItem icon={bookings} filledIcon={bookingsFilled} navigation={isServiceSeeker ? '/bookings' : isServiceProvider ? '/service-provider/bookings' : '/'} navigate={navigate} label='Bookings' />
                         <NavigationItem icon={plusIcon} centered navigate={setVisible} label='' onClick={() => setVisible(true)} />
-                        <NavigationItem icon={services} filledIcon={servicesFilled} navigation={isServiceSeeker ? '/services' : isServiceProvider ? '/rand' : '/'} navigate={navigate} label='Services' />
+                        <NavigationItem icon={services} filledIcon={servicesFilled} navigation={isServiceSeeker ? '/services' : isServiceProvider ? '/service-provider/my-services' : '/'} navigate={navigate} label='Services' />
                         <NavigationItem icon={chat} filledIcon={chatFilled} navigation={isServiceSeeker ? '/chat' : isServiceProvider ? '/chat' : '/'} navigate={navigate} label='Chat' />
                     </div>
                 </>

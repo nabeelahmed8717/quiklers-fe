@@ -11,6 +11,7 @@ import calenderIcon from '../../../assets/icons/calendar-day.svg'
 import PendingBookings from '../bookings/bookingsTabs/pendingBookings'
 import Table, { ColumnsType } from 'antd/es/table'
 import { Dayjs } from 'dayjs'
+import { useAppSelector } from '../../../redux/store'
 
 const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
   console.log(value.format('YYYY-MM-DD'), mode);
@@ -18,13 +19,11 @@ const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
 
 const ServiceProviderDashboard = () => {
 
+  const isMobileView = useAppSelector((state) => state.globalSlice.isMobileView);
+
   const { token } = theme.useToken();
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  const [isProfileOpen, setIsProfileOpen] = useState(true);
-
-
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const columns: ColumnsType<any> = [
     {
@@ -77,37 +76,26 @@ const ServiceProviderDashboard = () => {
     },
   ];
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    function handleViewportChange(event: any) {
-      setIsMobile(event.matches);
-    }
-    handleViewportChange(mediaQuery);
-    mediaQuery.addListener(handleViewportChange);
-    return () => {
-      mediaQuery.removeListener(handleViewportChange);
-    };
-  }, []);
 
   useEffect(() => {
-    if(isMobile){
+    if(isMobileView){
       setIsProfileOpen(false)
     }else{
       setIsProfileOpen(true)
     }
-  }, [isMobile])
+  }, [isMobileView])
   
 
   return (
     <div className='service-provider-main-dashboard'>
       <Row gutter={20}>
         <Col xs={24} sm={24} md={8} lg={6}>
-         {isMobile && <div className="profile-overview" style={{borderRadius:`${isProfileOpen ? '20px 20px 0 0' : '20px' }`}} onClick={() => setIsProfileOpen(!isProfileOpen)}>
+         {isMobileView && <div className="profile-overview" style={{borderRadius:`${isProfileOpen ? '20px 20px 0 0' : '20px' }`}} onClick={() => setIsProfileOpen(!isProfileOpen)}>
             <p className='fs-14 fw-600'>Profile Overview</p>
-            <img src={arrowDownIcon} width={30} height={20} alt="" />
+            <img src={arrowDownIcon} style={{transform:`${isProfileOpen ? "rotate(180deg)" : 'rotate(0deg)'}`, transition:"0.3s"}} width={30} height={20} alt="" />
           </div>}
           {isProfileOpen &&
-            <div className="profile-card-main" style={{borderRadius:`${!isMobile && isProfileOpen ? '0px 0px 20 20' : '0px' }`}}>
+            <div className={`profile-card-main ${isMobileView ? "lower-to-high-anm-prf" : ""}`} style={{borderRadius:`${!isMobileView && isProfileOpen ? '0px 0px 20 20' : '0px' }`}}>
               <div className="user-details">
                 <div className="user-image-bx"><img src={userIcon} alt="" /></div>
                 <div className="user-title">
@@ -165,7 +153,7 @@ const ServiceProviderDashboard = () => {
                 <img src={serviceStcIcon} className='ser-stc-img' alt="" />
               </div>
               <div className="mis-cards-flex">
-                <Row gutter={20}>
+                <Row gutter={[20,20]}>
                   <Col xs={12} sm={12} md={8} lg={8}>
                     <div className="mis-cards-bx">
                       <p>Service Viewers</p>

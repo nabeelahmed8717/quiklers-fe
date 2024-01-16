@@ -4,6 +4,7 @@ import userIconOne from "../../../assets/raw/driver.png"
 import "./chatArea.scss"
 import TextArea from 'antd/es/input/TextArea'
 import sendIcon from "../../../assets/icons/send-icon.svg"
+import arowBack from "../../../assets/icons/arrow-down-small.svg"
 
 import chatWrapper from "../../../assets/wrapper/chat-wrapper.svg"
 
@@ -48,7 +49,7 @@ const ChatArea = ({ catchedChatData, setIsShowContacts, setIsShowChat, isMobile 
                         <div className="chat-head">
                             <div className="wrp-one-set">
 
-                                {isMobile && <span onClick={handelChatDiaplay}>{'<-'}</span>}
+                                {isMobile && <span onClick={handelChatDiaplay}><img src={arowBack} style={{transform:"rotate(90deg)"}} alt="" /></span>}
                                 <div className="user-icon--details">
                                     <img src={catchedChatData.userIcon} alt="" />
                                 </div>

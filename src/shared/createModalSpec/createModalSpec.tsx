@@ -29,7 +29,6 @@ const CreateModalSpec = ({ visible, setVisible }: any) => {
     if (startY - endY > 100) {
       setVisible(false);
     }
-    console.log("working")
   };
 
   return (

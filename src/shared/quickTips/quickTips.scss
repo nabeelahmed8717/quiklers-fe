@@ -35,3 +35,18 @@
     align-items: center;
     justify-content: center;
 }
+
+.quick-tips-popover{
+  width: 70% !important;
+  // right: 20px !important;
+  .ant-popover-arrow{
+    // right: 20px !important;
+    
+  }
+  .ant-popover-content{
+    margin-right: 20px;
+  }
+ .ant-popover-inner{
+  border-radius: 12px !important;
+ }
+}

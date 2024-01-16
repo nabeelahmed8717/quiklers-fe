@@ -117,7 +117,7 @@ const Services = () => {
                 position: 'sticky',
                 top: '70px',
                 width: '100%',
-                zIndex: "100"
+                zIndex: "1"
               }}>
               <div className='filters'>
                 {

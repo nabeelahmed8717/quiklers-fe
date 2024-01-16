@@ -8,6 +8,36 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
+button {
+  position: relative ;
+  overflow: hidden !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+button:after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  pointer-events: none !important;
+  background-image: radial-gradient(circle, #000 10%, transparent 10.01%) !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% !important;
+  transform: scale(10,10) !important;
+  opacity: 0 !important;
+  transition: transform .5s, opacity 1s !important;
+}
+
+button:active:after {
+  transform: scale(0,0) !important;
+  opacity: .2 !important;
+  transition: 0s !important;
+}
+
+
 .btn-primary,
 .btn-cancel,
 .btn-secondary {
