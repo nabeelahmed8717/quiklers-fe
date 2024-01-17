@@ -36,7 +36,9 @@ const AvgModal = ({ isOpenModal, setIsOpenModal, onSubmit, isAvg, contentsSwitch
             {isAvg ?
                 <>
                     <div className="anm-wrapper">
+                        <div style={{height:"176px", display:"flex", justifyContent:"center"}}>
                         <img src={imageSwitch[contentsSwitchModal?.type]} style={{ width: "50%" }} />
+                        </div>
                         <h2 style={{ marginTop: "20px" }}>{titleSwitch[contentsSwitchModal?.type]}</h2>
                         <p className='fs-12 dull-color' style={{ marginTop: "10px", width: "80%", textAlign: "center" }}>{descriptionSwitch[contentsSwitchModal?.type]}</p>
                         <div style={{ display: "flex", gap: "10px", marginTop: "20px", marginBottom: "20px" }}>

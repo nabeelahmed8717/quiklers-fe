@@ -32,6 +32,7 @@ const UserProfile = Loadable(lazy(() => import("./pages/userProfile")));
 const ServiceProviderDashboard = Loadable(lazy(() => import("./pages/serviceProvider/serviceProviderDashboard")));
 const BookingsServiceProvider = Loadable(lazy(() => import("./pages/serviceProvider/bookings")));
 const MyServicesServiceProvider = Loadable(lazy(() => import("./pages/serviceProvider/myServices")));
+const CreateServiceServiceProvider = Loadable(lazy(() => import("./pages/serviceProvider/myServices/createService")));
 const ProfileServiceProvider = Loadable(lazy(() => import("./pages/serviceProvider/userProfile")));
 
 const PageNotFound = Loadable(lazy(() => import("./pages/pageNotFound")));
@@ -100,6 +101,10 @@ export const routes: any = [
       {
         path: "service-provider/my-services",
         element: <MyServicesServiceProvider />,
+      },
+      {
+        path: "service-provider/create-service",
+        element: <CreateServiceServiceProvider />,
       },
       {
         path: "service-provider/profile",

@@ -1,0 +1,139 @@
+.create-service-main {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 30px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  .create-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    .btn-back {
+      background-color: #e0e0e082;
+      width: 40px;
+      padding: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .wrapper-create-service {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .physical-availability-container {
+    background-color: #f7faf7;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .upload-images-s {
+    background-color: #f7faf7;
+    border: 1px solid #27ae60;
+    padding: 11px 46px;
+    border-radius: 14px;
+    border-style: dashed;
+    color: #27ae60;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .user-guides-res {
+    position: fixed;
+    left: 0px;
+    top: 50vh;
+    background-color: #1f408c;
+    width: 25px;
+    height: 100px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    border-radius: 0px 8px 8px 0px;
+
+    animation-name: leftToVis;
+    will-change: height;
+    animation-duration: 0.2s;
+    overflow: hidden;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Use a cubic bezier for smooth acceleration and deceleration */
+    animation-fill-mode: forwards;
+    p {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  .lower-to-high-anm-prf {
+    
+  }
+  
+  @keyframes leftToVis {
+    0% {
+      left: -30px;
+    }
+    100% {
+      left: 0px;
+    }
+  }
+
+}
+.wrapper-list {
+  height: 60vh;
+  overflow: scroll;
+  padding-bottom: 20px;
+
+  @media (max-width: 768px) {
+    overflow: unset;
+    height: fit-content !important;
+  }
+
+  &::-webkit-scrollbar {
+    background-color: #ffffff;
+    width: 8px;
+    height: 0px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 20px;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      background-color: #f5f5f5;
+      width: 8px;
+      height: 0px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #d9d9d9;
+      border-radius: 20px;
+    }
+  }
+
+  .wrapper-list-bx {
+    margin-bottom: 20px;
+    width: 100%;
+    ul {
+      font-size: 12px;
+      li {
+        list-style: disc;
+        color: #8a8a8a;
+      }
+    }
+  }
+}
+
+.user-guides-drawer {
+  .ant-drawer-header-title {
+  }
+}

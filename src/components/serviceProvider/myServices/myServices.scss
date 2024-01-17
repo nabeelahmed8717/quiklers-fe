@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     @media (max-width: 768px) {
      flex-direction: column;
+     gap: 10px;
      align-items: flex-start;
     }
   }
@@ -78,20 +79,6 @@
       width: 100% !important;
     }
   }
-  .physical-availability-container {
-    background-color: #f7faf7;
-    padding: 20px;
-    border-radius: 20px;
-  }
-  .upload-images-s{
-    background-color: #F7FAF7;
-    border: 1px solid #27ae60;
-    padding: 11px 46px;
-    border-radius: 14px;
-    border-style: dashed;
-    color: #27ae60;
-    font-size: 14px;
-    font-weight: 500;
-  }
+  
   
 }

@@ -27,7 +27,7 @@ const ProfileTabEdit = () => {
                             name="firstName"
                             rules={[{ required: true, message: 'Required field' }]}
                         >
-                            <Input placeholder="Type here" style={{ width: '100%', height: '45px', backgroundColor: "#FCFBFF" }} />
+                            <Input placeholder="Type here" style={{ width: '100%', height: '45px' }} />
                         </Form.Item>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={12}>
@@ -36,7 +36,7 @@ const ProfileTabEdit = () => {
                             name="lastName"
                             rules={[{ required: true, message: 'Required field' }]}
                         >
-                            <Input placeholder="Type here" style={{ width: '100%', height: '45px', backgroundColor: "#FCFBFF" }} />
+                            <Input placeholder="Type here" style={{ width: '100%', height: '45px' }} />
                         </Form.Item>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24}>
@@ -45,7 +45,7 @@ const ProfileTabEdit = () => {
                           name="serviceDescription"
                           rules={[{ required: true, message: 'Required field' }]}
                         >
-                          <TextArea rows={4} style={{ width: '100%', height: '100px', backgroundColor: "#FCFBFF" }} />
+                          <TextArea rows={4} style={{ width: '100%', height: '100px' }} />
                         </Form.Item>
                       </Col>
                 </Row>
